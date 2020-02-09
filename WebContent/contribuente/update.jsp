@@ -33,7 +33,7 @@
 		</div>
 	<% } %>
 
-		<form action="ExecuteUpdateContribuenteServlet" method="post">
+		<form action="/gestionecartellaesattorialeSpringJPA/ExecuteUpdateContribuenteServlet" method="post">
 		
 		
 		<input type="hidden" name="idInput" value = "<%= contribuenteInPagina.getId()%>">

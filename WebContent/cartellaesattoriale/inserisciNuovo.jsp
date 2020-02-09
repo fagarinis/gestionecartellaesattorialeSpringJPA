@@ -34,7 +34,7 @@
 			}
 		%>
 
-		<form action="ExecuteInsertCartellaEsattorialeServlet" method="post">
+		<form action="/gestionecartellaesattorialeSpringJPA/ExecuteInsertCartellaEsattorialeServlet" method="post">
 		
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="denominazioneInputId">Denominazione:</label>

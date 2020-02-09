@@ -30,7 +30,7 @@
 		</div>
 	<% } %>
 
-      	<form class="form-horizontal" action="ExecuteSearchCartellaEsattorialeServlet" method="post">
+      	<form class="form-horizontal" action="/gestionecartellaesattorialeSpringJPA/ExecuteSearchCartellaEsattorialeServlet" method="post">
       		<div class="form-group">
       			<label class="control-label col-sm-2" for="denominazioneInputId">Denominazione:</label>
 	    		<div class="col-sm-4">
@@ -62,7 +62,7 @@
 			<div class="form-group">        
 		      <div class="col-sm-offset-2 col-sm-10">
 		        <button type="submit" class="btn btn-primary btn-md">Effettua Ricerca</button>
-		        <a href="PrepareInsertCartellaEsattorialeServlet" class="btn btn-primary btn-md">Inserisci Nuovo Elemento</a>
+		        <a href="/gestionecartellaesattorialeSpringJPA/PrepareInsertCartellaEsattorialeServlet" class="btn btn-primary btn-md">Inserisci Nuovo Elemento</a>
 		      </div>
 		    </div>
 		</form>

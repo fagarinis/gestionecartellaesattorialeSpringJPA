@@ -12,8 +12,8 @@
 </head>
 <body>
 	<div class="container">
-
-   <%@ include file="../header.jsp" %>
+	
+    <%@ include file="../header.jsp" %>
   	
   	<div class="page-header">
 	  <h3>Pagina dei Risultati</h3>
@@ -40,9 +40,9 @@
 				<td><%=cartellaEsattorialeItem.getDenominazione() %></td>
 				<td><%=cartellaEsattorialeItem.getContribuente().getCf() %></td>
 				<td>
-					<a href="VisualizzaDettaglioCartellaEsattorialeServlet?idCartellaEsattoriale=<%=cartellaEsattorialeItem.getId() %>" class="btn btn-info">Dettaglio</a>
-					<a href="PrepareUpdateCartellaEsattorialeServlet?idCartellaEsattoriale=<%=cartellaEsattorialeItem.getId() %>" class="btn btn-info">Modifica</a>
-					<a href="PrepareDeleteCartellaEsattorialeServlet?idCartellaEsattoriale=<%=cartellaEsattorialeItem.getId() %>" class="btn btn-info">Elimina</a>
+					<a href="/gestionecartellaesattorialeSpringJPA/VisualizzaDettaglioCartellaEsattorialeServlet?idCartellaEsattoriale=<%=cartellaEsattorialeItem.getId() %>" class="btn btn-info">Dettaglio</a>
+					<a href="/gestionecartellaesattorialeSpringJPA/PrepareUpdateCartellaEsattorialeServlet?idCartellaEsattoriale=<%=cartellaEsattorialeItem.getId() %>" class="btn btn-info">Modifica</a>
+					<a href="/gestionecartellaesattorialeSpringJPA/PrepareDeleteCartellaEsattorialeServlet?idCartellaEsattoriale=<%=cartellaEsattorialeItem.getId() %>" class="btn btn-info">Elimina</a>
 				</td>
 			</tr>
 				
@@ -54,7 +54,7 @@
 	
 	<a href = "home.jsp" class="btn btn-primary btn-md">Torna alla Home</a>
 	<a href = "cartellaesattoriale/search.jsp" class="btn btn-primary btn-md">Nuova Ricerca</a>
-
+	
 	<%@ include file="../footer.jsp" %>
 	
 	</div>

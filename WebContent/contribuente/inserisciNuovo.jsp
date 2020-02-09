@@ -34,7 +34,7 @@
 			}
 		%>
 
-		<form action="ExecuteInsertContribuenteServlet" method="post">
+		<form action="/gestionecartellaesattorialeSpringJPA/ExecuteInsertContribuenteServlet" method="post">
 		
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="nomeInputId">Nome:</label>

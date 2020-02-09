@@ -40,9 +40,9 @@
 				<td><%=contribuenteItem.getNome() %></td>
 				<td><%=contribuenteItem.getCognome() %></td>
 				<td>
-					<a href="VisualizzaDettaglioContribuenteServlet?idContribuente=<%=contribuenteItem.getId() %>" class="btn btn-info">Dettaglio</a>
-					<a href="PrepareUpdateContribuenteServlet?idContribuente=<%=contribuenteItem.getId() %>" class="btn btn-info">Modifica</a>
-					<a href="PrepareDeleteContribuenteServlet?idContribuente=<%=contribuenteItem.getId() %>" class="btn btn-info">Elimina</a>
+					<a href="/gestionecartellaesattorialeSpringJPA/VisualizzaDettaglioContribuenteServlet?idContribuente=<%=contribuenteItem.getId() %>" class="btn btn-info">Dettaglio</a>
+					<a href="/gestionecartellaesattorialeSpringJPA/PrepareUpdateContribuenteServlet?idContribuente=<%=contribuenteItem.getId() %>" class="btn btn-info">Modifica</a>
+					<a href="/gestionecartellaesattorialeSpringJPA/PrepareDeleteContribuenteServlet?idContribuente=<%=contribuenteItem.getId() %>" class="btn btn-info">Elimina</a>
 				</td>
 			</tr>
 				
