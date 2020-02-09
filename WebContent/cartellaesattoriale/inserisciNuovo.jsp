@@ -37,7 +37,7 @@
 		<form action="ExecuteInsertCartellaEsattorialeServlet" method="post">
 		
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="nomeInputId">Denominazione:</label>
+				<label class="control-label col-sm-2" for="denominazioneInputId">Denominazione:</label>
 				<div class="col-sm-4">
 					<input class="form-control" type="text" id="denominazioneInputId"
 						name="denominazioneInput" required="required">
