@@ -19,6 +19,7 @@
 	  <h3>Pagina dei Risultati</h3>
 	</div>
 	
+	
 	<!-- Messaggio di modifica avvenuta con successo -->
 	<%if(request.getAttribute("messaggioUpdate") != null){ %>
 		<div class="alert alert-success" role="alert">
