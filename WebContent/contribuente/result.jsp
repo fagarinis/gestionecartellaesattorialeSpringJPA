@@ -36,21 +36,18 @@
 				<th>Action</th>
 			</tr>
 		</thead>
-		<% List<Contribuente> listaContribuenti = (List<Contribuente>)request.getAttribute("resultListAttr"); 
-			for(Contribuente contribuenteItem: listaContribuenti){ %>
+		<c:set var="listaContribuenti" value='${requestScope["resultListAttr"]}' />
+		<c:forEach var = "contribuenteItem" items="${listaContribuenti}">
 			<tr>
-				<td><%=contribuenteItem.getNome() %></td>
-				<td><%=contribuenteItem.getCognome() %></td>
+				<td><c:out value= "${contribuenteItem.getNome()}"/></td>
+				<td><c:out value= "${contribuenteItem.getCognome()}"/></td>
 				<td>
-					<a href="/gestionecartellaesattorialeSpringJPA/VisualizzaDettaglioContribuenteServlet?idContribuente=<%=contribuenteItem.getId() %>" class="btn btn-info">Dettaglio</a>
-					<a href="/gestionecartellaesattorialeSpringJPA/PrepareUpdateContribuenteServlet?idContribuente=<%=contribuenteItem.getId() %>" class="btn btn-info">Modifica</a>
-					<a href="/gestionecartellaesattorialeSpringJPA/PrepareDeleteContribuenteServlet?idContribuente=<%=contribuenteItem.getId() %>" class="btn btn-info">Elimina</a>
+					<a href="/gestionecartellaesattorialeSpringJPA/VisualizzaDettaglioContribuenteServlet?idContribuente=<c:out value= "${contribuenteItem.getId()}"/>" class="btn btn-info">Dettaglio</a>
+					<a href="/gestionecartellaesattorialeSpringJPA/PrepareUpdateContribuenteServlet?idContribuente=<c:out value= "${contribuenteItem.getId()}"/>" class="btn btn-info">Modifica</a>
+					<a href="/gestionecartellaesattorialeSpringJPA/PrepareDeleteContribuenteServlet?idContribuente=<c:out value= "${contribuenteItem.getId()}"/>" class="btn btn-info">Elimina</a>
 				</td>
 			</tr>
-				
-		<%	}
-		
-		%>
+		</c:forEach>
 	
 	</table>
 	

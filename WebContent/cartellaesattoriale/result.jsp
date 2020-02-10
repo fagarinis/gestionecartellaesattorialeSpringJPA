@@ -35,21 +35,21 @@
 				<th>Action</th>
 			</tr>
 		</thead>
-		<% List<CartellaEsattoriale> listaCartelleEsattoriali = (List<CartellaEsattoriale>)request.getAttribute("resultListAttr"); 
-			for(CartellaEsattoriale cartellaEsattorialeItem: listaCartelleEsattoriali){ %>
-			<tr>
-				<td><%=cartellaEsattorialeItem.getDenominazione() %></td>
-				<td><%=cartellaEsattorialeItem.getContribuente().getCf() %></td>
+		<c:set var="listaCartelleEsattoriali" value='${requestScope["resultListAttr"]}' />
+			<c:forEach var = "cartellaEsattorialeItem" items="${listaCartelleEsattoriali}">
+				<tr>
+				<td><c:out value= "${cartellaEsattorialeItem.getDenominazione()}"/></td>
+				<td><c:out value= "${cartellaEsattorialeItem.getContribuente().getCf()}"/></td>
 				<td>
-					<a href="/gestionecartellaesattorialeSpringJPA/VisualizzaDettaglioCartellaEsattorialeServlet?idCartellaEsattoriale=<%=cartellaEsattorialeItem.getId() %>" class="btn btn-info">Dettaglio</a>
-					<a href="/gestionecartellaesattorialeSpringJPA/PrepareUpdateCartellaEsattorialeServlet?idCartellaEsattoriale=<%=cartellaEsattorialeItem.getId() %>" class="btn btn-info">Modifica</a>
-					<a href="/gestionecartellaesattorialeSpringJPA/PrepareDeleteCartellaEsattorialeServlet?idCartellaEsattoriale=<%=cartellaEsattorialeItem.getId() %>" class="btn btn-info">Elimina</a>
+				
+					<a href="/gestionecartellaesattorialeSpringJPA/VisualizzaDettaglioCartellaEsattorialeServlet?idCartellaEsattoriale=<c:out value= "${cartellaEsattorialeItem.getId()}"/>" class="btn btn-info">Dettaglio</a>
+					<a href="/gestionecartellaesattorialeSpringJPA/PrepareUpdateCartellaEsattorialeServlet?idCartellaEsattoriale=<c:out value= "${cartellaEsattorialeItem.getId()}"/>" class="btn btn-info">Modifica</a>
+					<a href="/gestionecartellaesattorialeSpringJPA/PrepareDeleteCartellaEsattorialeServlet?idCartellaEsattoriale=<c:out value= "${cartellaEsattorialeItem.getId()}"/>" class="btn btn-info">Elimina</a>
 				</td>
 			</tr>
+			</c:forEach>
 				
-		<%	}
 		
-		%>
 	
 	</table>
 	
