@@ -16,7 +16,7 @@
 	<c:set var="contribuenteInPagina" value='${requestScope["contribuenteAttr"]}' />
 
 		<div class="page-header">
-			<h3>Pagina di Dettaglio</h3>
+			<h3>Pagina di Dettaglio Contribuente</h3>
 		</div>
 		
 		<div class="container-fluid">

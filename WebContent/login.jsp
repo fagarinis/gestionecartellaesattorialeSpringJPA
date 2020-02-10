@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Pagina di Accesso</title>
 
+<!-- JSTL librerie -->
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!-- Bootstrap -->
 <link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
@@ -15,11 +17,14 @@
 </head>
 <body class="text-center">
 	<div class="container">
-	<%if(request.getAttribute("messaggioErrore") != null){ %>
-		<div class="alert alert-danger" role="alert">
-			<%=request.getAttribute("messaggioErrore") %>
-		</div>
-	<% } %>
+	
+	<c:set var="messaggioErrore" value="${requestScope['messaggioErrore']}" />
+		<c:if test="${messaggioErrore != null}"> 
+			<div class="alert alert-danger" role="alert">
+				<c:out value= "${messaggioErrore}"/>
+			</div>
+		</c:if>
+		
     <form class="form-signin" action="LoginServlet" method="post">
       <h1 class="h3 mb-3 font-weight-normal">Accedi al Sistema</h1>
       <label for="inputUsername" class="sr-only">Username</label>

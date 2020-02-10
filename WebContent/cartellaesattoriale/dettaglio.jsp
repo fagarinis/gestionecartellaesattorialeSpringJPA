@@ -17,7 +17,7 @@
 		<c:set var="cartellaEsattorialeInPagina" value='${requestScope["cartellaEsattorialeAttr"]}' />
 
 		<div class="page-header">
-			<h3>Pagina di Dettaglio</h3>
+			<h3>Pagina di Dettaglio Cartella Esattoriale</h3>
 		</div>
 		<div class="container-fluid">
 			<dl class="row">
@@ -34,7 +34,12 @@
 			</dl>
 			<dl class="row">
 				<dt class="col-sm-3 text-right">Contribuente</dt>
-				<dd class="col-sm-9"><c:out value="${cartellaEsattorialeInPagina.getContribuente().getCf()}"/></dd>
+				<dd class="col-sm-9">
+				<a href="/gestionecartellaesattorialeSpringJPA/VisualizzaDettaglioContribuenteServlet?idContribuente=<c:out value= "${cartellaEsattorialeInPagina.getContribuente().getId()}"/>">
+				<c:out value="${cartellaEsattorialeInPagina.getContribuente().getCf()}"/>
+				</a>
+				
+				</dd>
 			</dl>
 
 			<a href = "javascript:history.back()" class="btn btn-primary btn-md">Torna Indietro</a>
