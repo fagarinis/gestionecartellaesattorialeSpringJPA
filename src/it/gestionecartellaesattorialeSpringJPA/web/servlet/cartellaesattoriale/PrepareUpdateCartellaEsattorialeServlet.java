@@ -44,8 +44,20 @@ public class PrepareUpdateCartellaEsattorialeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//test push
+
+		// controllo utente in sessione (va fatto in tutte le servlet)
+		if (request.getSession().getAttribute("userInfo") == null) {
+			response.sendRedirect(request.getContextPath());
+			return;
 		}
+
+		Long idCartellaEsattoriale = Long.parseLong(request.getParameter("idCartellaEsattoriale"));
+		CartellaEsattoriale o = cartellaEsattorialeService.caricaSingolaCartellaEsattorialeEager(idCartellaEsattoriale);
+
+		request.setAttribute("cartellaEsattorialeAttr", o);
+		request.getRequestDispatcher("/cartellaesattoriale/update.jsp").forward(request, response);
+
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
