@@ -27,6 +27,15 @@
 			<c:out value= "${messaggioUpdate}"/>
 		</div>
 	</c:if>
+	
+	<!-- Messaggio di cancellazione avvenuta con successo (JSTL) -->
+	<c:set var="messaggioDelete" value="${requestScope['messaggioDelete']}" />
+	<c:if test="${messaggioDelete != null}"> 
+		<div class="alert alert-success" role="alert">
+			<c:out value= "${messaggioDelete}"/>
+		</div>
+	</c:if>
+	
   	
 	<table class="table table-striped">
 		<thead>

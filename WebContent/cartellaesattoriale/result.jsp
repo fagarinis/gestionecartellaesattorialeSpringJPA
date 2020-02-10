@@ -26,6 +26,14 @@
 			<c:out value= "${messaggioUpdate}"/>
 		</div>
 	</c:if>
+	
+	<!-- Messaggio di cancellazione avvenuta con successo (JSTL) -->
+	<c:set var="messaggioDelete" value="${requestScope['messaggioDelete']}" />
+	<c:if test="${messaggioDelete != null}"> 
+		<div class="alert alert-success" role="alert">
+			<c:out value= "${messaggioDelete}"/>
+		</div>
+	</c:if>
   	
 	<table class="table table-striped">
 		<thead>
@@ -40,8 +48,7 @@
 				<tr>
 				<td><c:out value= "${cartellaEsattorialeItem.getDenominazione()}"/></td>
 				<td><c:out value= "${cartellaEsattorialeItem.getContribuente().getCf()}"/></td>
-				<td>
-				
+				<td>	
 					<a href="/gestionecartellaesattorialeSpringJPA/VisualizzaDettaglioCartellaEsattorialeServlet?idCartellaEsattoriale=<c:out value= "${cartellaEsattorialeItem.getId()}"/>" class="btn btn-info">Dettaglio</a>
 					<a href="/gestionecartellaesattorialeSpringJPA/PrepareUpdateCartellaEsattorialeServlet?idCartellaEsattoriale=<c:out value= "${cartellaEsattorialeItem.getId()}"/>" class="btn btn-info">Modifica</a>
 					<a href="/gestionecartellaesattorialeSpringJPA/PrepareDeleteCartellaEsattorialeServlet?idCartellaEsattoriale=<c:out value= "${cartellaEsattorialeItem.getId()}"/>" class="btn btn-info">Elimina</a>

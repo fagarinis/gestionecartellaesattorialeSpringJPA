@@ -63,6 +63,7 @@ public class ExecuteDeleteCartellaEsattorialeServlet extends HttpServlet {
 		CartellaEsattoriale cartellaEsattoriale = cartellaEsattorialeService.caricaSingolaCartellaEsattoriale(idCartellaEsattoriale);
 		cartellaEsattorialeService.rimuovi(cartellaEsattoriale);
 
+		request.setAttribute("messaggioDelete", "Cancellazione avvenuta con successo");
 		request.setAttribute("resultListAttr", cartellaEsattorialeService.listAllCartelleEsattorialiEager());
 		request.getRequestDispatcher("/cartellaesattoriale/result.jsp").forward(request, response);
 	}

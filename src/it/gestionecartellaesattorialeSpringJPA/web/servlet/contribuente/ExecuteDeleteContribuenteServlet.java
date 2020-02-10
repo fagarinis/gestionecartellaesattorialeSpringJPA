@@ -63,6 +63,7 @@ public class ExecuteDeleteContribuenteServlet extends HttpServlet {
 		Contribuente contribuente = contribuenteService.caricaSingoloContribuente(idContribuente);
 		contribuenteService.rimuovi(contribuente);
 
+		request.setAttribute("messaggioDelete", "Cancellazione avvenuta con successo");
 		request.setAttribute("resultListAttr", contribuenteService.listAllContribuenti());
 		request.getRequestDispatcher("/contribuente/result.jsp").forward(request, response);
 
