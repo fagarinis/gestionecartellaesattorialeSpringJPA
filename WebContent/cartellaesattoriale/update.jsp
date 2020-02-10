@@ -14,11 +14,11 @@
 	<!-- per gli attributi pattern e title dei tag <input> -->
 	<%@ include file="/inputErrors.jsp"%>
 
-	<% CartellaEsattoriale cartellaEsattorialeInPagina = (CartellaEsattoriale) request.getAttribute("cartellaEsattorialeAttr");%>
 
 
 	<div class="container">
 		<%@ include file="/header.jsp"%>
+		<c:set var="cartellaEsattorialeInPagina" value='${requestScope["cartellaEsattorialeAttr"]}' />
 
 		<!-- header -->
 		<div class="page-header">
@@ -38,34 +38,34 @@
 
 		<form action="/gestionecartellaesattorialeSpringJPA/ExecuteUpdateCartellaEsattorialeServlet" method="post">
 		
-			<input type="hidden" name="idInput" value = "<%= cartellaEsattorialeInPagina.getId()%>">
+			<input type="hidden" name="idInput" value = "<c:out value="${cartellaEsattorialeInPagina.getId()}"/>">
 						
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="denominazioneInputId">Denominazione:</label>
 				<div class="col-sm-4">
 					<input class="form-control" type="text" required="required" id="denominazioneInputId"
-						name="denominazioneInput" value = "<%= cartellaEsattorialeInPagina.getDenominazione()%>">
+						name="denominazioneInput" value = "<c:out value="${cartellaEsattorialeInPagina.getDenominazione()}"/>">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="descrizioneInputId">Descrizione:</label>
 				<div class="col-sm-4">
 					<input class="form-control" type="text"  id="descrizioneInputId"
-						name="descrizioneInput" value = "<%= cartellaEsattorialeInPagina.getDescrizione()%>">
+						name="descrizioneInput" value = "<c:out value="${cartellaEsattorialeInPagina.getDescrizione()}"/>">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="importoInputId">Importo:</label>
 				<div class="col-sm-4">
 					<input class="form-control" type="number" min="0" step ="0.01" placeholder = "0,00" id="importoInputId"
-						name="importoInput" required="required" value = "<%= cartellaEsattorialeInPagina.getImporto()%>">
+						name="importoInput" required="required" value = "<c:out value="${cartellaEsattorialeInPagina.getImporto()}"/>">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="cfInputId">Codice Fiscale Contribuente:</label>
 				<div class="col-sm-4">
 					<input class="form-control" type="text" required="required" id="cfInputId"
-						name="cfInput" value = "<%= cartellaEsattorialeInPagina.getContribuente().getCf()%>">
+						name="cfInput" value = "<c:out value="${cartellaEsattorialeInPagina.getContribuente().getCf()}"/>">
 				</div>
 			</div>
 

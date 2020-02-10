@@ -10,39 +10,37 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
-	<%
-		Contribuente contribuenteInPagina = (Contribuente) request.getAttribute("contribuenteAttr");
-	%>
-
 	<div class="container">
+	<%@ include file="/header.jsp"%>
 
-		<%@ include file="/header.jsp"%>
+	<c:set var="contribuenteInPagina" value='${requestScope["contribuenteAttr"]}' />
 
 		<div class="page-header">
 			<h3>Pagina di Dettaglio</h3>
 		</div>
+		
 		<div class="container-fluid">
 			<dl class="row">
 				<dt class="col-sm-3 text-right">Nome</dt>
-				<dd class="col-sm-9"><%=contribuenteInPagina.getNome()%></dd>
+				<dd class="col-sm-9"><c:out value="${contribuenteInPagina.getNome()}"/></dd>
 			</dl>
 			<dl class="row">
 				<dt class="col-sm-3 text-right">Cognome</dt>
-				<dd class="col-sm-9"><%=contribuenteInPagina.getCognome()%></dd>
+				<dd class="col-sm-9"><c:out value="${contribuenteInPagina.getCognome()}"/></dd>
 			</dl>
 			<dl class="row">
 				<dt class="col-sm-3 text-right">Codice Fiscale</dt>
-				<dd class="col-sm-9"><%=contribuenteInPagina.getCf()%></dd>
+				<dd class="col-sm-9"><c:out value="${contribuenteInPagina.getCf()}"/></dd>
 			</dl>
 			<dl class="row">
 				<dt class="col-sm-3 text-right">Indirizzo</dt>
-				<dd class="col-sm-9"><%=contribuenteInPagina.getIndirizzo()%></dd>
+				<dd class="col-sm-9"><c:out value="${contribuenteInPagina.getIndirizzo()}"/></dd>
 			</dl>
 
 			<a href = "javascript:history.back()" class="btn btn-primary btn-md">Torna Indietro</a>
 			
 		</div>
-<%@ include file="/footer.jsp"%>
+	<%@ include file="/footer.jsp"%>
 	</div>
 
 	

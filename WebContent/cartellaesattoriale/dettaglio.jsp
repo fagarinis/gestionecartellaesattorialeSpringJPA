@@ -10,13 +10,11 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
-	<%
-		CartellaEsattoriale cartellaEsattorialeInPagina = (CartellaEsattoriale) request.getAttribute("cartellaEsattorialeAttr");
-	%>
-
+	
 	<div class="container">
-
+	
 		<%@ include file="/header.jsp"%>
+		<c:set var="cartellaEsattorialeInPagina" value='${requestScope["cartellaEsattorialeAttr"]}' />
 
 		<div class="page-header">
 			<h3>Pagina di Dettaglio</h3>
@@ -24,19 +22,19 @@
 		<div class="container-fluid">
 			<dl class="row">
 				<dt class="col-sm-3 text-right">Denominazione</dt>
-				<dd class="col-sm-9"><%=cartellaEsattorialeInPagina.getDenominazione()%></dd>
+				<dd class="col-sm-9"><c:out value="${cartellaEsattorialeInPagina.getDenominazione()}"/></dd>
 			</dl>
 			<dl class="row">
 				<dt class="col-sm-3 text-right">Descrizione</dt>
-				<dd class="col-sm-9"><%=cartellaEsattorialeInPagina.getDescrizione()%></dd>
+				<dd class="col-sm-9"><c:out value="${cartellaEsattorialeInPagina.getDescrizione()}"/></dd>
 			</dl>
 			<dl class="row">
 				<dt class="col-sm-3 text-right">Importo</dt>
-				<dd class="col-sm-9"><%=cartellaEsattorialeInPagina.getImporto()%></dd>
+				<dd class="col-sm-9"><c:out value="${cartellaEsattorialeInPagina.getImporto()}"/></dd>
 			</dl>
 			<dl class="row">
 				<dt class="col-sm-3 text-right">Contribuente</dt>
-				<dd class="col-sm-9"><%=cartellaEsattorialeInPagina.getContribuente().getCf()%></dd>
+				<dd class="col-sm-9"><c:out value="${cartellaEsattorialeInPagina.getContribuente().getCf()}"/></dd>
 			</dl>
 
 			<a href = "javascript:history.back()" class="btn btn-primary btn-md">Torna Indietro</a>

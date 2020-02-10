@@ -14,11 +14,12 @@
 	<!-- per gli attributi pattern e title dei tag <input> -->
 	<%@ include file="/inputErrors.jsp"%>
 
-	<% Contribuente contribuenteInPagina = (Contribuente) request.getAttribute("contribuenteAttr");%>
+	
 
 
 	<div class="container">
 		<%@ include file="/header.jsp"%>
+		<c:set var="contribuenteInPagina" value='${requestScope["contribuenteAttr"]}' />
 
 		<!-- header -->
 		<div class="page-header">
@@ -37,21 +38,21 @@
 		<form action="/gestionecartellaesattorialeSpringJPA/ExecuteUpdateContribuenteServlet" method="post">
 		
 		
-		<input type="hidden" name="idInput" value = "<%= contribuenteInPagina.getId()%>">
+		<input type="hidden" name="idInput" value = "<c:out value="${contribuenteInPagina.getId()}"/>">
 						
 						
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="nomeInputId">Nome:</label>
 				<div class="col-sm-4">
 					<input class="form-control" type="text" required="required" id="nomeInputId"
-						name="nomeInput" value = "<%= contribuenteInPagina.getNome()%>" pattern="<%=patternAlfabetico %>" title ="<%=inputAlfabetico %>">
+						name="nomeInput" value = "<c:out value="${contribuenteInPagina.getNome()}"/>" pattern="<%=patternAlfabetico %>" title ="<%=inputAlfabetico %>">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="cognomeInputId">Cognome:</label>
 				<div class="col-sm-4">
 					<input class="form-control" type="text" required="required" id="cognomeInputId"
-						name="cognomeInput" value = "<%= contribuenteInPagina.getCognome()%>" pattern="<%=patternAlfabetico %>" title ="<%=inputAlfabetico %>">
+						name="cognomeInput" value = "<c:out value="${contribuenteInPagina.getCognome()}"/>" pattern="<%=patternAlfabetico %>" title ="<%=inputAlfabetico %>">
 				</div>
 			</div>
 			<div class="form-group">
@@ -59,14 +60,14 @@
 					Fiscale:</label>
 				<div class="col-sm-4">
 					<input class="form-control" type="text" required="required" id="cfInputId"
-						name="cfInput" value = "<%= contribuenteInPagina.getCf()%>">
+						name="cfInput" value = "<c:out value="${contribuenteInPagina.getCf()}"/>">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="indirizzoInputId">Indirizzo:</label>
 				<div class="col-sm-4">
 					<input class="form-control" type="text" required="required" id="indirizzoInputId"
-						name="indirizzoInput" value = "<%= contribuenteInPagina.getIndirizzo()%>">
+						name="indirizzoInput" value = "<c:out value="${contribuenteInPagina.getIndirizzo()}"/>">
 				</div>
 			</div>
 
