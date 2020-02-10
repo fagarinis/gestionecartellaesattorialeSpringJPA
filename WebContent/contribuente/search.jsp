@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ricerca Contribuente</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
 
@@ -19,12 +20,13 @@
 	  <h3>Pagina di Ricerca Contribuente</h3>
 	</div>
 	
-	<!-- Messaggio di inserimento avvenuto con successo -->
-	<%if(request.getAttribute("messaggioInsert") != null){ %>
+	<!-- Messaggio di inserimento avvenuto con successo JSTL-->
+	<c:set var="messaggioInsert" value="${requestScope['messaggioInsert']}" />
+	<c:if test="${messaggioInsert != null}"> 
 		<div class="alert alert-success" role="alert">
-			<%=request.getAttribute("messaggioInsert") %>
+			<c:out value= "${messaggioInsert}"/>
 		</div>
-	<% } %>
+	</c:if>
 	
 
       	<form class="form-horizontal" action="/gestionecartellaesattorialeSpringJPA/ExecuteSearchContribuenteServlet" method="post">

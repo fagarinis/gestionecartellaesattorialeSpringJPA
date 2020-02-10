@@ -26,12 +26,15 @@
 		</div>
 		
 		
-		<!-- Messaggio di contribuente con stesso cf gia' presente su DB -->
-	<%if(request.getAttribute("messaggioErrore") != null){ %>
-		<div class="alert alert-danger" role="alert">
-			<%=request.getAttribute("messaggioErrore") %>
-		</div>
-	<% } %>
+		<!-- Messaggio di contribuente cf di input non presente su DB nel caso si voglia cambiare
+		a chi e' associata una cartella esattoriale (JSTL) -->
+		<c:set var="messaggioErrore" value="${requestScope['messaggioErrore']}" />
+		<c:if test="${messaggioErrore != null}"> 
+			<div class="alert alert-danger" role="alert">
+				<c:out value= "${messaggioErrore}"/>
+			</div>
+		</c:if>
+		
 
 		<form action="/gestionecartellaesattorialeSpringJPA/ExecuteUpdateCartellaEsattorialeServlet" method="post">
 		

@@ -24,15 +24,12 @@
 
 
 		<!-- Messaggio di cf gia' presente sul DB -->
-		<%
-			if (request.getAttribute("messaggioErrore") != null) {
-		%>
-		<div class="alert alert-danger" role="alert">
-			<%=request.getAttribute("messaggioErrore")%>
-		</div>
-		<%
-			}
-		%>
+		<c:set var="messaggioErrore" value="${requestScope['messaggioErrore']}" />
+		<c:if test="${messaggioErrore != null}"> 
+			<div class="alert alert-danger" role="alert">
+				<c:out value= "${messaggioErrore}"/>
+			</div>
+		</c:if>
 
 		<form action="/gestionecartellaesattorialeSpringJPA/ExecuteInsertContribuenteServlet" method="post">
 		

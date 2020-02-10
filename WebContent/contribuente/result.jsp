@@ -20,12 +20,13 @@
 	</div>
 	
 	
-	<!-- Messaggio di modifica avvenuta con successo -->
-	<%if(request.getAttribute("messaggioUpdate") != null){ %>
+	<!-- Messaggio di modifica avvenuta con successo (JSTL) -->
+	<c:set var="messaggioUpdate" value="${requestScope['messaggioUpdate']}" />
+	<c:if test="${messaggioUpdate != null}"> 
 		<div class="alert alert-success" role="alert">
-			<%=request.getAttribute("messaggioUpdate") %>
+			<c:out value= "${messaggioUpdate}"/>
 		</div>
-	<% } %>
+	</c:if>
   	
 	<table class="table table-striped">
 		<thead>

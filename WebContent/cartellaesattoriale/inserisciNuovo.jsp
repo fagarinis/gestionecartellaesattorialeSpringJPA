@@ -22,17 +22,13 @@
 			<h3>Inserisci Cartella Esattoriale</h3>
 		</div>
 
-
-		<!-- Messaggio di cf contribuente non trovato sul DB -->
-		<%
-			if (request.getAttribute("messaggioErrore") != null) {
-		%>
-		<div class="alert alert-danger" role="alert">
-			<%=request.getAttribute("messaggioErrore")%>
-		</div>
-		<%
-			}
-		%>
+		<!-- Messaggio di cf di input (a cui associare la cartella esattoriale) presente su DB (JSTL) -->
+		<c:set var="messaggioErrore" value="${requestScope['messaggioErrore']}" />
+		<c:if test="${messaggioErrore != null}"> 
+			<div class="alert alert-danger" role="alert">
+				<c:out value= "${messaggioErrore}"/>
+			</div>
+		</c:if>
 
 		<form action="/gestionecartellaesattorialeSpringJPA/ExecuteInsertCartellaEsattorialeServlet" method="post">
 		

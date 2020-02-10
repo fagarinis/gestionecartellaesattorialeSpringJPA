@@ -11,25 +11,29 @@
 
 <div class="container">
 
-   <%@ include file="../header.jsp" %>
+   <%@ include file="../header.jsp" %>   
       
     <div class="page-header">
 	  <h3>Pagina di Ricerca Cartella Esattoriale</h3>
 	</div>
 	
-	<!-- Messaggio di errore cf non presente -->
-	<%if(request.getAttribute("messaggioErrore") != null){ %>
+	<!-- Messaggio di errore cf non presente JSTL-->
+	<c:set var="messaggioErrore" value="${requestScope['messaggioErrore']}" />
+	<c:if test="${messaggioErrore != null}"> 
 		<div class="alert alert-danger" role="alert">
-			<%=request.getAttribute("messaggioErrore") %>
+			<c:out value= "${messaggioErrore}"/>
 		</div>
-	<% } %>
+	</c:if>
 	
-	<!-- Messaggio di inserimento avvenuto con successo -->
-	<%if(request.getAttribute("messaggioInsert") != null){ %>
+	
+	<!-- Messaggio di inserimento avvenuto con successo JSTL-->
+	<c:set var="messaggioInsert" value="${requestScope['messaggioInsert']}" />
+	<c:if test="${messaggioInsert != null}"> 
 		<div class="alert alert-success" role="alert">
-			<%=request.getAttribute("messaggioInsert") %>
+			<c:out value= "${messaggioInsert}"/>
 		</div>
-	<% } %>
+	</c:if>
+	
 
       	<form class="form-horizontal" action="/gestionecartellaesattorialeSpringJPA/ExecuteSearchCartellaEsattorialeServlet" method="post">
       		<div class="form-group">
@@ -70,6 +74,7 @@
 		
 		<%@ include file="../footer.jsp" %>
     </div><!-- /.container -->
+
 
 
 
