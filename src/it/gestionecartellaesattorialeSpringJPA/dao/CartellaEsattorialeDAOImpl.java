@@ -24,7 +24,7 @@ public class CartellaEsattorialeDAOImpl implements CartellaEsattorialeDAO {
 
 	@Override
 	public List<CartellaEsattoriale> list() {
-		return em.createQuery("From CartellEsattoriale", CartellaEsattoriale.class).getResultList();
+		return em.createQuery("From CartellaEsattoriale", CartellaEsattoriale.class).getResultList();
 	}
 
 	@Override
@@ -108,6 +108,11 @@ public class CartellaEsattorialeDAOImpl implements CartellaEsattorialeDAO {
 
 		result = em.createQuery(query, CartellaEsattoriale.class).getResultList();
 		return result;
+	}
+
+	@Override
+	public List<CartellaEsattoriale> listEager() {
+		return em.createQuery("From CartellaEsattoriale ca join fetch ca.contribuente c order by c.cf", CartellaEsattoriale.class).getResultList();
 	}
 
 }

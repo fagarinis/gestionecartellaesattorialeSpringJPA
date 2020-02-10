@@ -63,4 +63,10 @@ public class CartellaEsattorialeServiceImpl implements CartellaEsattorialeServic
 		return cartellaEsattorialeDAO.getEager(id);
 	}
 
+	@Transactional(readOnly = true)
+	@Override
+	public List<CartellaEsattoriale> listAllCartelleEsattorialiEager() {
+		return cartellaEsattorialeDAO.listEager();
+	}
+
 }

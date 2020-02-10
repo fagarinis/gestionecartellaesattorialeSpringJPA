@@ -7,6 +7,8 @@ import it.gestionecartellaesattorialeSpringJPA.model.CartellaEsattoriale;
 public interface CartellaEsattorialeService {
 
 	public List<CartellaEsattoriale> listAllCartelleEsattoriali();
+	
+	public List<CartellaEsattoriale> listAllCartelleEsattorialiEager();
 
 	public CartellaEsattoriale caricaSingolaCartellaEsattoriale(Long id);
 
