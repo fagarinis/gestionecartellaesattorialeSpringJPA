@@ -76,8 +76,8 @@ public class ExecuteUpdateCartellaEsattorialeServlet extends HttpServlet {
 		if (contribuenteDaAssociare == null) {
 			request.setAttribute("messaggioErrore",
 					"Errore: Non è presente alcun contribuente con codice fiscale " + cfInput + " sul sistema");
-			request.setAttribute("cfInseritoPrecedentemente", cfInput);
-			request.setAttribute("cartellaEsattorialeAttr", o);
+			
+			request.setAttribute("cartellaEsattorialeAttr", cartellaEsattorialeService.caricaSingolaCartellaEsattorialeEager(o.getId()));
 			request.getRequestDispatcher("/cartellaesattoriale/update.jsp").forward(request, response);
 			return;
 		}
